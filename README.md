@@ -1,506 +1,240 @@
-# 🎯 TalentSage - AI-Powered Recruitment Platform# TalentSage - Zustand Store Implementation ✅
+# 🎯 TalentSage - AI-Powered Recruitment Platform
 
+<div align="center">
 
-
-<div align="center">## Implementation Complete
-
-
-
-![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)This phase implements a **production-ready Zustand global state** for TalentSage with:
-
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.0.8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-4.4.7-000000?style=for-the-badge&logo=redux&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.16.16-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-![Vite](https://img.shields.io/badge/Vite-5.0.8-646CFF?style=for-the-badge&logo=vite&logoColor=white)✅ **Domain models** (Job, Candidate, Rubric, AuditLog, Screening)  
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-success?style=for-the-badge)](https://talentsage-demo.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/malik-shaheer03/TalentSage)
 
-![Zustand](https://img.shields.io/badge/Zustand-4.4.7-000000?style=for-the-badge&logo=redux&logoColor=white)✅ **Modular slice architecture** (Jobs, Candidates, Rubrics, Audit)  
+</div>
 
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.16.16-0055FF?style=for-the-badge&logo=framer&logoColor=white)✅ **Candidate stage transitions** with automatic audit log injection  
+A **premium, AI-native recruitment operating system** built with **React**, **TypeScript**, and **modern web technologies**. TalentSage combines intelligent automation, voice AI assistance, and trust-critical UX patterns to revolutionize the hiring process.
 
-✅ **Rubric weight validation** (must sum to 100%)  
-
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-success?style=for-the-badge)](https://talentsage-demo.vercel.app)✅ **LocalStorage persistence** for rubric edits  
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/malik-shaheer03/TalentSage)✅ **Realistic seed data** (3 jobs, 7 candidates, 2 rubrics)  
-
-✅ **Test suite** with 6+ test cases  
-
-</div>✅ **Full TypeScript** type safety  
-
-
-
-A **premium, AI-native recruitment operating system** built with **React**, **TypeScript**, and **modern web technologies**. TalentSage combines intelligent automation, voice AI assistance, and trust-critical UX patterns to revolutionize the hiring process.---
-
-
-
-> **Built for Vision Tact LLC** - A practical demonstration of production-grade frontend engineering, product design maturity, and system architecture.## 📂 Current Project Structure
-
-
-
----```
-
-TalentSage/
-
-## 📋 Product Overview├── docs/
-
-│   └── requirements.md              # Original assessment requirements
-
-TalentSage is not just another ATS (Applicant Tracking System). It's an **AI-native recruitment operating system** that combines:│
-
-├── src/
-
-- 🎨 **Premium Marketing Experience** - Beautiful, responsive landing page showcasing product capabilities│   ├── types/
-
-- 💼 **Recruiter Workspace** - Complete workflow for jobs, candidates, pipeline management, and evaluation│   │   ├── models.ts                # Domain model interfaces
-
-- 🤖 **AI Voice Assistant** - Conversational agent with speech recognition and natural language commands│   │   └── index.ts                 # Type exports
-
-- 🎥 **Video Screening System** - End-to-end video interview workflow with AI evaluation│   │
-
-- 📊 **Trust-Critical UX** - Audit logs, consistent state management, and predictable user flows│   └── store/
-
-- ✨ **Premium Animations** - Smooth, performant micro-interactions and scroll-based reveals│       ├── index.ts                 # Main store + initialization
-
-│       ├── seedData.ts              # Realistic dummy data (10 entities)
-
-### Business Impact Metrics│       ├── demo.ts                  # No-UI demonstration script
-
-│       ├── store.test.ts            # Test suite (6+ tests)
-
-| Metric | Improvement |│       │
-
-|--------|-------------|│       ├── slices/
-
-| ⏱️ Time-to-Hire | **60% reduction** |│       │   ├── jobsSlice.ts         # Jobs domain
-
-| ⚡ Screening Speed | **75% faster** |│       │   ├── candidatesSlice.ts   # Candidates + stage transitions
-
-| 💬 Candidate Engagement | **40% improvement** |│       │   ├── rubricsSlice.ts      # Rubrics + localStorage
-
-| 📈 Recruiter Productivity | **30% higher** |│       │   └── auditSlice.ts        # Audit log system
-
-| 💰 Cost Savings | **50% on admin tasks** |│       │
-
-| 🤖 AI Support | **24/7 availability** |│       └── utils/
-
-│           └── rubricValidation.ts  # Weight validation logic
-
----│
-
-├── .gitignore
-
-## 🚀 Key Features├── package.json                     # Dependencies (Zustand, Framer Motion, etc.)
-
-├── tsconfig.json                    # TypeScript config
-
-### 1. 🎤 AI Voice Assistant├── tsconfig.node.json
-
-> **"Shortlist top candidates" "Generate evaluation rubric" "Schedule interview"**├── vite.config.ts                   # Vite bundler config
-
-│
-
-- **Natural Language Understanding** - Fuzzy command matching with 60+ speech corrections├── IMPLEMENTATION_SUMMARY.md        # ✅ Summary of what was built
-
-- **Voice Input/Output** - Web Speech API integration with typed fallback├── STORE_IMPLEMENTATION.md          # 📚 Full documentation
-
-- **Animated Avatar** - 4 states (Idle, Listening, Thinking, Speaking) with smooth transitions└── STATE_FLOW_EXAMPLES.md           # 🔄 Flow diagrams and examples
-
-- **Smart Corrections** - Handles mishearings like "can do date" → "candidate"```
-
-- **Real Actions** - Triggers actual UI changes (moves candidates, generates rubrics)
+> **Built for Vision Tact LLC** — A practical demonstration of production-grade frontend engineering, product design maturity, and system architecture.
 
 ---
 
-**Technical Highlights:**
+## 📋 Product Overview
 
-- Custom `useSpeechRecognition` hook with browser API## 🎯 Key Features Implemented
+TalentSage is not just another ATS (Applicant Tracking System). It's an AI-native recruitment operating system that combines:
 
-- Speech correction engine with phrase-level corrections
+- 🎨 **Premium Marketing Experience** — Beautiful, responsive landing page showcasing product capabilities
+- 💼 **Recruiter Workspace** — Complete workflow for jobs, candidates, pipeline management, and evaluation
+- 🤖 **AI Voice Assistant** — Conversational agent with speech recognition and natural language commands
+- 🎥 **Video Screening System** — End-to-end video interview workflow with AI evaluation
+- 📊 **Trust-Critical UX** — Audit logs, consistent state management, and predictable user flows
+- ✨ **Premium Animations** — Smooth, performant micro-interactions and scroll-based reveals
 
-- Animated SVG avatar with gradient styling### 1. **Stage Transition Logic**
+### Business Impact Metrics
 
-- Audio level detection for visual feedback```typescript
-
-changeCandidateStage(id, newStage, actor)
-
----```
-
-- Updates candidate stage
-
-### 2. 🎯 Drag & Drop Candidate Pipeline- Injects audit log automatically
-
-- Updates timestamp
-
-- **Native HTML5 Drag & Drop** - Zero external dependencies- Prevents duplicate logs
-
-- **4 Pipeline Stages** - Applied → Shortlisted → Interview → Rejected- Supports different actors (recruiter/ai_assistant/system)
-
-- **Visual Drop Zones** - Gradient highlights when dragging over columns
-
-- **Mobile-Friendly** - Click button to open stage selector modal on mobile### 2. **Rubric Weight Validation**
-
-- **Toast Notifications** - Confirms successful moves with beautiful alerts```typescript
-
-validateRubricWeights(criteria) → boolean
-
-**Performance:**normalizeRubricWeights(criteria) → normalized
-
-- Smooth 60fps animations```
-
-- Reduced clutter with removed action buttons- Validates weights sum to 100%
-
-- More candidates visible without scrolling- Auto-normalizes invalid weights
-
-- Handles edge cases (all zeros)
-
----- Applied on every save
-
-
-
-### 3. 📹 Video Screening System### 3. **LocalStorage Persistence**
-
-- Key: `talentsage_rubrics`
-
-#### Candidate View:- Auto-saves on every rubric mutation
-
-- **Drag & Drop Upload** - Click or drag video files- Hydrates on store init
-
-- **Video Preview** - Watch before submitting- Falls back to seed data
-
-- **File Validation** - Type and size checks (max 100MB)
-
-- **Progress Indicator** - Real-time upload progress### 4. **Automatic Audit Logs**
-
-Every important action creates a log:
-
-#### Recruiter View:- `application_received`
-
-- **Video Playback** - Built-in controls- `stage_changed`
-
-- **AI Transcript** - Automatically generated- `rubric_created`
-
-- **Evaluation Scores** - Communication, Technical, Cultural Fit, Problem-Solving- `rubric_updated`
-
-- **Three-Decision System** - Pass / Hold / Reject with notes- `criteria_updated`
-
-
-
----### 5. **Realistic Seed Data**
-
-- **3 Jobs**: Frontend Engineer, Product Designer, Backend Engineer
-
-### 4. 🔔 Toast Notification System- **7 Candidates**: Varied stages, scores, skills, locations
-
-- **2 Rubrics**: Pre-configured with valid weights
-
-- **4 Types** - Success ✅, Error ❌, Warning ⚠️, Info ℹ️- **7+ Audit Logs**: Initial application events
-
-- **Glass-morphism Design** - Frosted glass with backdrop blur
-
-- **Auto-Dismiss** - 4-second default duration---
-
-- **Manual Close** - X button with hover effect
-
-- **Stacked Display** - Multiple toasts stack vertically## 🧪 Testing
-
-- **Smooth Animations** - Slide in from bottom with Framer Motion
-
-Test suite covers:
-
----1. ✅ Stage transition creates audit log
-
-2. ✅ No duplicate logs for unchanged stage
-
-### 5. 🎨 Custom Scrollbar3. ✅ Multiple candidates maintain consistency
-
-4. ✅ Invalid weights normalized
-
-- **Branded Design** - Blue-to-purple gradient matching app theme5. ✅ Valid weights preserved
-
-- **Smooth Interactions** - Rounded design with hover glow6. ✅ Rubric changes logged
-
-- **Cross-Browser** - Webkit (Chrome/Safari) + Firefox support7. ✅ LocalStorage persistence
-
-- **Performance** - GPU-accelerated rendering
-
-**Run tests:** `npm test` (after installing dependencies)
+| Metric | Improvement |
+|--------|-------------|
+| ⏱️ Time-to-Hire | **60% reduction** |
+| ⚡ Screening Speed | **75% faster** |
+| 💬 Candidate Engagement | **40% improvement** |
+| 📈 Recruiter Productivity | **30% higher** |
+| 💰 Cost Savings | **50% on admin tasks** |
+| 🤖 AI Support | **24/7 availability** |
 
 ---
 
----
+## 🚀 Key Features
+
+### 1. 🎤 AI Voice Assistant
+> *"Shortlist top candidates" — "Generate evaluation rubric" — "Schedule interview"*
+
+- **Natural Language Understanding** — Fuzzy command matching with 60+ speech corrections
+- **Voice Input/Output** — Web Speech API integration with typed fallback
+- **Animated Avatar** — 4 states (Idle, Listening, Thinking, Speaking) with smooth transitions
+- **Smart Corrections** — Handles mishearings like "can do date" → "candidate"
+- **Real Actions** — Triggers actual UI changes (moves candidates, generates rubrics)
+
+### 2. 🎯 Drag & Drop Candidate Pipeline
+
+- **Native HTML5 Drag & Drop** — Zero external dependencies
+- **4 Pipeline Stages** — Applied → Shortlisted → Interview → Rejected
+- **Visual Drop Zones** — Gradient highlights when dragging over columns
+- **Mobile-Friendly** — Click button to open stage selector modal on mobile
+- **Toast Notifications** — Confirms successful moves with elegant alerts
+
+### 3. 📹 Video Screening System
+
+**Candidate View:**
+- Drag & drop upload — Click or drag video files
+- Video preview before submitting
+- File validation — Type and size checks (max 100MB)
+- Real-time upload progress indicator
+
+**Recruiter View:**
+- Built-in video playback controls
+- AI-generated transcripts
+- Evaluation scores — Communication, Technical, Cultural Fit, Problem-Solving
+- Three-decision system — Pass / Hold / Reject with notes
+
+### 4. 🔔 Toast Notification System
+
+- **4 Types** — Success ✅, Error ❌, Warning ⚠️, Info ℹ️
+- **Glass-morphism Design** — Frosted glass with backdrop blur
+- **Auto-Dismiss** — 4-second default duration
+- **Manual Close** — X button with hover effect
+- **Stacked Display** — Multiple toasts stack vertically
+
+### 5. 🎨 Custom Scrollbar
+
+- **Branded Design** — Blue-to-purple gradient matching app theme
+- **Smooth Interactions** — Rounded design with hover glow effect
+- **Cross-Browser** — Webkit (Chrome/Safari) + Firefox support
 
 ### 6. 📱 Responsive Navigation
 
-## 📊 Consistency Guarantees
+**Desktop:** Logo on left, centered navigation, actions on right — CSS Grid layout with balanced spacing.
 
-**Desktop:**
+**Mobile:** Hamburger menu on right (UX best practice), collapsible menu with smooth animation, touch-friendly button sizes (44px+).
 
-- Logo on left, centered navigation, actions on right| Requirement | Implementation | Status |
+### 7. 👥 Candidate Management
 
-- CSS Grid layout with balanced spacing|-------------|----------------|--------|
+- Complete profiles — Name, email, location, experience, skills
+- Visual pipeline movement with stage tracking
+- AI compatibility scores and evaluation
+- Visual skill tags
+- Complete action history via audit trail
+- Individual loading states — Only clicked button shows spinner
 
-| Stage changes update UI consistently | Single action updates all state | ✅ |
+### 8. 💼 Job Posting & Management
 
-**Mobile:**| Audit logs always created | Injected inside actions | ✅ |
-
-- Hamburger menu on right (UX best practice)| Rubric weights sum to 100% | Validation + normalization | ✅ |
-
-- Collapsible menu with smooth animation| Rubrics persist in session | localStorage on every save | ✅ |
-
-- Touch-friendly button sizes (44px+)| No direct state mutation | Only through named actions | ✅ |
-
-
-
-------
-
-
-
-### 7. 👥 Candidate Management## 🚀 Next Steps
-
-
-
-- **Complete Profiles** - Name, email, location, experience, skills### To install dependencies:
-
-- **Stage Tracking** - Visual pipeline movement```powershell
-
-- **AI Scoring** - Compatibility scores and evaluationcd c:\Users\hp\Desktop\TalentSage
-
-- **Skill Tags** - Visual display of qualificationsnpm install
-
-- **Audit Trail** - Complete history of all actions```
-
-- **Individual Loading States** - Only clicked button shows spinner (improved UX)
-
-### To run tests:
-
----```powershell
-
-npm test
-
-### 8. 💼 Job Posting & Management```
-
-
-
-- **Rich Descriptions** - Title, company, location, salary range### To see the demo:
-
-- **Requirements List** - Structured qualification criteriaThe `src/store/demo.ts` file demonstrates all functionality without UI.
-
-- **Evaluation Rubrics** - Custom scoring frameworks with weights
-
-- **Candidate Pipeline** - Track applicants per job---
-
-- **Statistics** - Count by stage with visual indicators
-
-## 📝 Design Philosophy
+- Rich descriptions — Title, company, location, salary range
+- Structured requirements lists
+- Custom scoring frameworks with rubric weights
+- Per-job candidate pipeline tracking
+- Statistics — Count by stage with visual indicators
 
 ---
 
-This implementation follows the requirements:
-
 ## 🛠️ Tech Stack
 
-✅ **Not AI-generated looking**
+### Core Technologies
 
-### Core Technologies- Natural variable names (no `handleCreateUserProfileData`)
-
-- No over-commenting obvious code
-
-| Technology | Version | Purpose |- Readable, maintainable patterns
-
+| Technology | Version | Purpose |
 |------------|---------|---------|
-
-| **React** | 18.2.0 | UI library with hooks and concurrent features |✅ **Not over-engineered**
-
-| **TypeScript** | 5.3.3 | Type-safe development and better DX |- Simple slice pattern
-
-| **Vite** | 5.0.8 | Lightning-fast build tool and HMR |- No unnecessary abstractions
-
-| **Zustand** | 4.4.7 | Lightweight state management |- Direct, explainable logic
-
+| **React** | 18.2.0 | UI library with hooks and concurrent features |
+| **TypeScript** | 5.3.3 | Type-safe development and better DX |
+| **Vite** | 5.0.8 | Lightning-fast build tool and HMR |
+| **Zustand** | 4.4.7 | Lightweight state management |
 | **Framer Motion** | 10.16.16 | Production-ready animations |
 
-✅ **Production-ready**
+### Additional Libraries
 
-### Additional Libraries- Type-safe with TypeScript
+- **Web Speech API** — Browser-native speech recognition
+- **CSS Modules** — Scoped styling with zero conflicts
+- **Vitest** — Fast unit testing framework
+- **React Testing Library** — Component testing
+- **ESLint** — Code quality and consistency
 
-- Error handling (validation)
+---
 
-- **Web Speech API** - Browser-native speech recognition- Performance-conscious (O(1) lookups)
+## 📁 Project Architecture
 
-- **CSS Modules** - Scoped styling with zero conflicts- Tested (core workflows covered)
-
-- **Vitest** - Fast unit testing framework
-
-- **React Testing Library** - Component testing✅ **Human-explainable**
-
-- **ESLint** - Code quality and consistency- Clear documentation
-
-- Flow examples
-
----- Test coverage
-
-
-
-## 📁 Project Architecture---
-
-
-
-```## 🔍 Files to Review
-
+```
 TalentSage/
-
-├── src/1. **`IMPLEMENTATION_SUMMARY.md`** - What was built
-
-│   ├── app/2. **`STORE_IMPLEMENTATION.md`** - How it works (detailed)
-
-│   │   ├── App.tsx                    # Main application component3. **`STATE_FLOW_EXAMPLES.md`** - Flow diagrams
-
-│   │   ├── Header.tsx                 # Global navigation4. **`src/store/index.ts`** - Main store
-
-│   │   └── Header.module.css5. **`src/store/slices/candidatesSlice.ts`** - Stage transition logic
-
-│   │6. **`src/store/slices/rubricsSlice.ts`** - Validation + persistence
-
-│   ├── features/                      # Feature-based architecture7. **`src/store/seedData.ts`** - Realistic data
-
-│   │   ├── assistant/                 # AI Voice Assistant8. **`src/store/store.test.ts`** - Test cases
-
+├── src/
+│   ├── app/
+│   │   ├── App.tsx                    # Main application component
+│   │   ├── Header.tsx                 # Global navigation
+│   │   └── Header.module.css
+│   │
+│   ├── features/                      # Feature-based architecture
+│   │   ├── assistant/                 # AI Voice Assistant
 │   │   │   ├── AssistantWidget.tsx
-
-│   │   │   ├── Avatar.tsx             # 4-state animated avatar---
-
+│   │   │   ├── Avatar.tsx             # 4-state animated avatar
 │   │   │   ├── useSpeechRecognition.ts
-
-│   │   │   └── speechCorrection.ts    # 60+ corrections## ✅ Checklist
-
+│   │   │   └── speechCorrection.ts    # 60+ corrections
 │   │   │
-
-│   │   ├── candidates/                # Candidate Management- [x] Domain models defined
-
-│   │   │   ├── CandidateProfile.tsx- [x] Folder structure organized by domain
-
-│   │   │   └── CandidateProfile.module.css- [x] Zustand store with slices
-
-│   │   │- [x] Candidate stage transitions with audit logs
-
-│   │   ├── jobs/                      # Job Management & Pipeline- [x] Rubric weight validation (100% sum)
-
-│   │   │   ├── JobsPage.tsx- [x] LocalStorage persistence
-
-│   │   │   ├── JobDetailPage.tsx- [x] Realistic seed data (10 entities)
-
-│   │   │   ├── StageSelector.tsx      # Mobile stage picker- [x] Test suite (6+ tests)
-
-│   │   │   └── JobDetailPage.module.css- [x] Documentation (3 markdown files)
-
-│   │   │- [x] TypeScript config
-
-│   │   ├── screening/                 # Video Screening- [x] Vite config
-
-│   │   │   ├── pages/- [x] Package.json
-
-│   │   │   │   └── ScreeningPage.tsx- [x] .gitignore
-
+│   │   ├── candidates/                # Candidate Management
+│   │   │   ├── CandidateProfile.tsx
+│   │   │   └── CandidateProfile.module.css
+│   │   │
+│   │   ├── jobs/                      # Job Management & Pipeline
+│   │   │   ├── JobsPage.tsx
+│   │   │   ├── JobDetailPage.tsx
+│   │   │   ├── StageSelector.tsx      # Mobile stage picker
+│   │   │   └── JobDetailPage.module.css
+│   │   │
+│   │   ├── screening/                 # Video Screening
+│   │   │   ├── pages/
+│   │   │   │   └── ScreeningPage.tsx
 │   │   │   └── components/
-
-│   │   │       ├── VideoUpload.tsx**Status:** ✅ **READY FOR PHASE 2**
-
+│   │   │       ├── VideoUpload.tsx
 │   │   │       └── VideoReview.tsx
-
-│   │   │**No UI code generated** (as requested)  
-
-│   │   ├── marketing/                 # Landing Page**Waiting for confirmation to proceed** with marketing website
-
+│   │   │
+│   │   ├── marketing/                 # Landing Page
 │   │   │   └── MarketingPage.tsx
-
-│   │   │---
-
+│   │   │
 │   │   └── audit/                     # Activity Timeline
-
-│   │       └── AuditTimeline.tsx## 💬 Questions Answered
-
+│   │       └── AuditTimeline.tsx
 │   │
-
-│   ├── shared/                        # Shared Components### "How will candidate stage transitions remain consistent?"
-
-│   │   └── components/→ Single action (`changeCandidateStage`) updates all state + audit log atomically
-
+│   ├── shared/                        # Shared Components
+│   │   └── components/
 │   │       ├── Badge/
-
-│   │       ├── Button/### "How will rubric edits persist?"
-
-│   │       ├── Card/→ localStorage middleware saves on every mutation, hydrates on init
-
+│   │       ├── Button/
+│   │       ├── Card/
 │   │       ├── EmptyState/
-
-│   │       └── Toast/                 # Notification system### "How will audit logs be injected?"
-
-│   │           ├── Toast.tsx→ Automatically inside every mutating action, impossible to bypass
-
+│   │       └── Toast/
+│   │           ├── Toast.tsx
 │   │           ├── ToastContainer.tsx
-
-│   │           ├── useToast.ts### "How will assistant commands dispatch UI changes?"
-
-│   │           └── index.ts→ Commands call same store actions as UI (prepared for Phase 4)
-
+│   │           ├── useToast.ts
+│   │           └── index.ts
 │   │
-
-│   ├── store/                         # State Management### "How will voice degrade gracefully?"
-
-│   │   └── index.ts                   # Zustand store→ Feature detection on mount, fallback to text input (prepared for Phase 4)
-
+│   ├── store/                         # State Management
+│   │   ├── index.ts                   # Main store + initialization
+│   │   ├── seedData.ts                # Realistic dummy data
+│   │   ├── demo.ts                    # No-UI demonstration script
+│   │   ├── store.test.ts              # Test suite (6+ tests)
+│   │   ├── slices/
+│   │   │   ├── jobsSlice.ts
+│   │   │   ├── candidatesSlice.ts
+│   │   │   ├── rubricsSlice.ts
+│   │   │   └── auditSlice.ts
+│   │   └── utils/
+│   │       └── rubricValidation.ts
 │   │
-
-│   ├── types/                         # TypeScript Definitions### "How will header avoid layout shift?"
-
-│   │   ├── index.ts→ Fixed height, CSS-first, no conditional rendering (prepared for Phase 2)
-
+│   ├── types/
+│   │   ├── index.ts
 │   │   ├── models.ts
-
-│   │   └── css-modules.d.ts---
-
+│   │   └── css-modules.d.ts
 │   │
-
-│   ├── styles/                        # Global Styles**Ready for your review and confirmation to proceed!**
-
-│   │   ├── global.css                 # Custom scrollbar
-│   │   ├── tokens.css                 # Design tokens
+│   ├── styles/
+│   │   ├── global.css
+│   │   ├── tokens.css
 │   │   └── animations.css
 │   │
 │   └── main.tsx                       # App entry point
 │
 ├── docs/
-│   ├── requirements.md                # Original requirements
-│   ├── PROJECT_DOCUMENTATION.md       # Complete feature docs
-│   └── ARCHITECTURE_DECISION.md       # Why feature-based structure
+│   ├── requirements.md
+│   ├── PROJECT_DOCUMENTATION.md
+│   └── ARCHITECTURE_DECISION.md
 │
-├── public/                            # Static assets
+├── public/
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
 └── README.md
 ```
 
----
+### Architecture Pattern: Feature-Based (Domain-Driven)
 
-## 🏗️ Architecture Pattern: **Feature-Based (Domain-Driven)**
-
-### Why Feature-Based?
-
-**TalentSage uses feature-based architecture because:**
-
-1. ✅ **Business Domain Alignment** - Each folder represents a business feature (jobs, candidates, screening), not just a UI page
-2. ✅ **Scalability** - Teams can work on different features without conflicts
-3. ✅ **Maintainability** - All related code (components, styles, logic) lives together
-4. ✅ **Clear Ownership** - Easy to assign features to developers
-5. ✅ **Industry Standard** - Used by VS Code, Slack, Figma, Linear
-
-**Read More:** [docs/ARCHITECTURE_DECISION.md](docs/ARCHITECTURE_DECISION.md)
+TalentSage uses a feature-based architecture because it aligns with business domains, enables team scalability, keeps related code co-located, and is the industry standard used by tools like VS Code, Slack, and Linear.
 
 ---
 
 ## 🧠 Key Technical Concepts
 
-### 1. **State Management with Zustand**
+### 1. State Management with Zustand
 
 ```typescript
 // Lightweight, flexible, no boilerplate
@@ -513,55 +247,45 @@ const useStore = create<State>((set) => ({
 }));
 ```
 
-**Benefits:**
-- No providers needed
-- Minimal re-renders
-- TypeScript support
-- Devtools integration
-
----
-
-### 2. **Speech Recognition with Custom Corrections**
+### 2. Stage Transition Logic
 
 ```typescript
-// Handle common mishearings
+changeCandidateStage(id, newStage, actor)
+// - Updates candidate stage
+// - Injects audit log automatically
+// - Updates timestamp
+// - Prevents duplicate logs
+// - Supports actors: recruiter / ai_assistant / system
+```
+
+### 3. Rubric Weight Validation
+
+```typescript
+validateRubricWeights(criteria) → boolean
+normalizeRubricWeights(criteria) → normalized
+
+// - Validates weights sum to 100%
+// - Auto-normalizes invalid weights
+// - Handles edge cases (all zeros)
+// - Applied on every save
+```
+
+### 4. Speech Recognition with Custom Corrections
+
+```typescript
 const corrections = {
   "short list": "shortlist",
   "can do date": "candidate",
   "inter view": "interview",
   "roo brick": "rubric",
+  // 60+ corrections...
 };
 ```
 
-**Algorithm:** Fuzzy string matching with Levenshtein distance
-
----
-
-### 3. **Drag & Drop Performance**
+### 5. Animation Performance
 
 ```typescript
-// Native HTML5 - no libraries
-handleDragStart(e, candidateId, currentStage)
-handleDragOver(e, targetStage)  // Highlight drop zone
-handleDrop(e, targetStage)       // Update state
-```
-
-**Optimizations:**
-- CSS `transform` for GPU acceleration
-- Debounced state updates
-- Virtual scrolling for large lists
-
----
-
-### 4. **Animation Performance**
-
-**60fps Guarantee:**
-- Use `transform` and `opacity` (GPU accelerated)
-- Avoid `width`, `height`, `top`, `left` (triggers reflow)
-- Use `will-change` for animated elements
-- Framer Motion for declarative animations
-
-```typescript
+// 60fps guaranteed — uses GPU-accelerated properties only
 <motion.div
   initial={{ opacity: 0, y: 50 }}
   animate={{ opacity: 1, y: 0 }}
@@ -572,68 +296,33 @@ handleDrop(e, targetStage)       // Update state
 
 ---
 
-### 5. **Design System**
+## 🎨 Design System
 
-#### Color Palette
+### Color Palette
 
 ```css
-/* Primary */
---color-primary: #2563eb;        /* Blue */
---color-primary-dark: #1d4ed8;
---color-secondary: #7c3aed;       /* Purple */
-
-/* Gradients */
---gradient-brand: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
---gradient-bg: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #fce7f3 100%);
+/* Brand */
+--color-primary:   #2563eb;   /* Blue */
+--color-secondary: #7c3aed;   /* Purple */
+--gradient-brand:  linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
 
 /* Semantic */
---color-success: #10b981;         /* Green */
---color-danger: #ef4444;          /* Red */
---color-warning: #f59e0b;         /* Orange */
---color-info: #3b82f6;            /* Blue */
+--color-success: #10b981;     /* Green */
+--color-danger:  #ef4444;     /* Red */
+--color-warning: #f59e0b;     /* Orange */
+--color-info:    #3b82f6;     /* Blue */
 ```
 
-#### Typography
+### Typography
 
 - **Font:** Inter, system-ui, -apple-system
 - **Scale:** 0.75rem to 1.875rem (fluid)
 - **Weights:** 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
 
-#### Spacing
+### Spacing
 
 - **System:** 8px grid (4px, 8px, 12px, 16px, 20px, 24px, 32px, 48px)
-- **Variables:** `--space-1` to `--space-12`
-
----
-
-## 🎯 Design Patterns Used
-
-### 1. **Component Composition**
-```tsx
-<Card hoverable>
-  <Badge variant="success">Active</Badge>
-  <Button size="sm" loading={isLoading}>Save</Button>
-</Card>
-```
-
-### 2. **Custom Hooks**
-```typescript
-const { transcript, isListening, startListening } = useSpeechRecognition();
-const { toasts, addToast, removeToast } = useToast();
-```
-
-### 3. **Module Pattern**
-```typescript
-// Encapsulated logic in features
-export { CandidateProfile } from './CandidateProfile';
-```
-
-### 4. **Factory Pattern**
-```typescript
-// Toast creation
-toast.success('Candidate moved!');
-toast.error('Failed to save');
-```
+- **Variables:** `--space-1` through `--space-12`
 
 ---
 
@@ -648,12 +337,7 @@ toast.error('Failed to save');
 | Mobile Chrome | Latest | ✅ Full |
 | Mobile Safari | iOS 14+ | ⚠️ Partial |
 
-**Required Features:**
-- ES6+ JavaScript
-- CSS Grid & Flexbox
-- CSS Custom Properties
-- `backdrop-filter` (for glassmorphism)
-- Web Speech API (for voice features)
+**Required Features:** ES6+ JavaScript, CSS Grid & Flexbox, CSS Custom Properties, `backdrop-filter`, Web Speech API
 
 ---
 
@@ -682,33 +366,22 @@ npm install
 # Start development server
 npm run dev
 
-# Open in browser
 # Visit: http://localhost:5173
 ```
 
 ### Build for Production
 
 ```bash
-# Create optimized production build
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Output directory: dist/
+npm run build     # Create optimized production build
+npm run preview   # Preview production build locally
 ```
 
 ### Run Tests
 
 ```bash
-# Run unit tests
-npm run test
-
-# Run tests with coverage
-npm run test:coverage
-
-# Run tests in watch mode
-npm run test:watch
+npm run test             # Run unit tests
+npm run test:coverage    # Run tests with coverage
+npm run test:watch       # Watch mode
 ```
 
 ---
@@ -717,234 +390,61 @@ npm run test:watch
 
 ### For Recruiters
 
-#### 1. **Navigate the Workspace**
-- Click **"Workspace"** in header to access recruitment tools
-- Browse all active job postings
-- View candidate counts per stage
-
-#### 2. **Manage Candidate Pipeline**
-- **Desktop:** Drag & drop candidates between stages
-- **Mobile:** Click the "+" button on candidate cards to select stage
-- View real-time updates with toast notifications
-
-#### 3. **Review Candidates**
-- Click any candidate card to view full profile
-- See AI evaluation scores and strengths/concerns
-- Review skills, experience, and location
-- Check activity timeline for audit trail
-
-#### 4. **Use Voice Commands**
-- Click the floating AI button (bottom-right)
-- Say: **"Shortlist top candidates"** or **"Generate evaluation rubric"**
-- Watch the avatar animate as it processes
-- See results applied in real-time
-
-#### 5. **Review Video Screenings**
-- Open candidate profile
-- Click **"View Screening"** button
-- Watch video submission
-- Read AI-generated transcript and evaluation
-- Select Pass/Hold/Reject with notes
-- Submit review
+1. **Navigate the Workspace** — Click "Workspace" in the header to access recruitment tools and browse all active job postings.
+2. **Manage the Pipeline** — Drag and drop candidates between stages on desktop, or use the "+" button on candidate cards for mobile.
+3. **Review Candidates** — Click any candidate card to view the full profile, AI evaluation scores, skills, and audit trail.
+4. **Use Voice Commands** — Click the floating AI button (bottom-right) and say commands like *"Shortlist top candidates"* to trigger real-time updates.
+5. **Review Video Screenings** — Open a candidate profile, click "View Screening", watch the video, read the AI transcript, and submit a Pass/Hold/Reject decision.
 
 ### For Candidates
 
-#### **Submit Video Screening**
-- Access screening link from recruiter
-- Drag & drop video file or click to browse
-- Preview your video before submission
-- Click **"Submit Screening"**
-- Receive confirmation notification
+Access the screening link from your recruiter, drag & drop (or browse for) your video file, preview it, then click **"Submit Screening"** to confirm.
 
 ---
 
-## 🧪 Testing & Quality Assurance
+## 🧪 Testing
 
 ### Test Coverage
 
-- ✅ **Unit Tests** - Component rendering, state management logic
-- ✅ **Integration Tests** - User flows, state updates across features
-- ✅ **Accessibility** - ARIA labels, keyboard navigation, screen readers
-- ✅ **Performance** - Lighthouse scores, animation frame rates
-- ✅ **Browser Testing** - Chrome, Firefox, Safari, Edge
+The test suite covers the following scenarios:
+
+1. ✅ Stage transition creates audit log
+2. ✅ No duplicate logs for unchanged stage
+3. ✅ Multiple candidates maintain consistency
+4. ✅ Invalid weights normalized correctly
+5. ✅ Valid weights preserved as-is
+6. ✅ Rubric changes are logged
+7. ✅ LocalStorage persistence across sessions
 
 ### Code Quality
 
-- ✅ **TypeScript** - 100% type coverage
-- ✅ **ESLint** - Zero errors, minimal warnings
-- ✅ **Prettier** - Consistent code formatting
-- ✅ **Husky** - Pre-commit hooks for quality gates
+- **TypeScript** — 100% type coverage
+- **ESLint** — Zero errors, minimal warnings
+- **Prettier** — Consistent code formatting
+- **Husky** — Pre-commit hooks for quality gates
+
+---
+
+## 📊 State Management Guarantees
+
+| Requirement | Implementation | Status |
+|-------------|----------------|--------|
+| Stage changes update UI consistently | Single action updates all state | ✅ |
+| Audit logs always created | Injected inside actions | ✅ |
+| Rubric weights sum to 100% | Validation + normalization | ✅ |
+| Rubrics persist across sessions | localStorage on every save | ✅ |
+| No direct state mutation | Only through named actions | ✅ |
 
 ---
 
 ## 🔧 Performance Optimizations
 
-### 1. **Code Splitting**
-- Lazy loading for feature modules
-- Dynamic imports for heavy components
-- Reduced initial bundle size
+- **Code Splitting** — Lazy loading for feature modules, dynamic imports for heavy components
+- **State Management** — Zustand for minimal re-renders with selective subscriptions
+- **UI Performance** — CSS Modules for scoped styles, Framer Motion for GPU-accelerated animations
+- **Build Optimizations** — Vite HMR, tree-shaking, asset compression
 
-### 2. **State Management**
-- Zustand for minimal re-renders
-- Selective subscriptions
-- localStorage persistence
-
-### 3. **UI Performance**
-- CSS Modules for scoped styles
-- Framer Motion for GPU-accelerated animations
-- Debounced search and filters
-
-### 4. **Build Optimizations**
-- Vite's lightning-fast HMR
-- Tree-shaking for smaller bundles
-- Asset optimization and compression
-
----
-
-## 🎓 Learning Outcomes
-
-### For Developers
-
-- ✅ Building production-grade React applications
-- ✅ TypeScript for type-safe development
-- ✅ Modern state management with Zustand
-- ✅ Animation performance with Framer Motion
-- ✅ Speech recognition and voice interfaces
-- ✅ Feature-based architecture
-- ✅ Responsive design and mobile-first approach
-- ✅ Accessibility best practices
-- ✅ Testing strategies
-
-### For Interviews
-
-- ✅ Demonstrates full-stack frontend skills
-- ✅ Shows system architecture understanding
-- ✅ Proves product design maturity
-- ✅ Exhibits clean code practices
-- ✅ Highlights performance optimization
-- ✅ Displays UX/UI expertise
-- ✅ Demonstrates project planning ability
-
----
-
-## 🎯 Technical Interview Topics Covered
-
-### **Frontend Architecture**
-- ✅ Feature-based vs page-based structure
-- ✅ Component composition patterns
-- ✅ State management strategies
-- ✅ Performance optimization techniques
-- ✅ Responsive design principles
-
-### **React & TypeScript**
-- ✅ Custom hooks development
-- ✅ Context API and prop drilling
-- ✅ Render optimization (useMemo, useCallback)
-- ✅ Type-safe component props
-- ✅ Generic types and utility types
-
-### **State Management**
-- ✅ Zustand vs Redux comparison
-- ✅ Immutable state updates
-- ✅ Derived state patterns
-- ✅ Persistence strategies
-
-### **Animation & Performance**
-- ✅ 60fps animations with transform/opacity
-- ✅ GPU acceleration techniques
-- ✅ Reflow and repaint optimization
-- ✅ CSS containment
-
-### **Accessibility (a11y)**
-- ✅ Semantic HTML
-- ✅ ARIA labels and roles
-- ✅ Keyboard navigation
-- ✅ Screen reader support
-
-### **Testing**
-- ✅ Unit testing with Vitest
-- ✅ Component testing with RTL
-- ✅ Integration testing strategies
-- ✅ E2E testing approaches
-
----
-
-## 🔮 Future Enhancements
-
-### Phase 1: Core Improvements
-- [ ] Dark/Light theme toggle
-- [ ] Advanced search and filtering
-- [ ] Export data to CSV/JSON
-- [ ] Batch candidate operations
-- [ ] Custom evaluation rubric templates
-
-### Phase 2: Advanced Features
-- [ ] Real-time collaboration (WebSocket)
-- [ ] Calendar integration (Google/Outlook)
-- [ ] Email automation
-- [ ] SMS notifications
-- [ ] Video conferencing integration
-
-### Phase 3: Scale & Performance
-- [ ] Server-side rendering (Next.js)
-- [ ] Progressive Web App (PWA)
-- [ ] Offline mode support
-- [ ] Advanced caching strategies
-- [ ] CDN integration
-
-### Phase 4: AI & Analytics
-- [ ] Advanced AI scoring models
-- [ ] Predictive analytics dashboard
-- [ ] Sentiment analysis on videos
-- [ ] Automated interview scheduling
-- [ ] Bias detection and reporting
-
----
-
-## 🔐 Security Considerations
-
-### Current Implementation (Client-Side)
-- ✅ No sensitive authentication (demo purposes)
-- ✅ Data stored in browser localStorage
-- ✅ Input validation and sanitization
-
-### Production Recommendations
-- 🔒 JWT-based authentication
-- 🔒 Secure API endpoints with authorization
-- 🔒 Encrypt sensitive candidate data
-- 🔒 HTTPS for all communications
-- 🔒 CORS policy enforcement
-- 🔒 Rate limiting on API calls
-- 🔒 XSS and CSRF protection
-- 🔒 Regular security audits
-
----
-
-## ♿ Accessibility Features
-
-- ✅ **Keyboard Navigation** - Tab through all interactive elements
-- ✅ **Screen Reader Support** - Semantic HTML and ARIA labels
-- ✅ **High Contrast** - WCAG AA compliant color ratios
-- ✅ **Focus Indicators** - Visible focus states on all elements
-- ✅ **Scalable Text** - Respects user zoom preferences
-- ✅ **Touch Targets** - Minimum 44x44px for mobile
-- ✅ **Descriptive Labels** - Clear button and link text
-- ✅ **Alt Text** - Images and icons have descriptions
-
----
-
-## 📊 Performance Metrics
-
-### Lighthouse Scores (Target)
-
-| Metric | Score | Status |
-|--------|-------|--------|
-| Performance | 95+ | ✅ |
-| Accessibility | 100 | ✅ |
-| Best Practices | 95+ | ✅ |
-| SEO | 100 | ✅ |
-
-### Core Web Vitals
+### Core Web Vitals (Target)
 
 - **LCP** (Largest Contentful Paint): < 2.5s ✅
 - **FID** (First Input Delay): < 100ms ✅
@@ -952,14 +452,78 @@ npm run test:watch
 
 ---
 
-## 📞 Support & Contact
+## ♿ Accessibility Features
 
-**Vision Tact LLC**
+- **Keyboard Navigation** — Tab through all interactive elements
+- **Screen Reader Support** — Semantic HTML and ARIA labels
+- **High Contrast** — WCAG AA compliant color ratios
+- **Focus Indicators** — Visible focus states on all elements
+- **Scalable Text** — Respects user zoom preferences
+- **Touch Targets** — Minimum 44×44px for mobile
+- **Descriptive Labels** — Clear button and link text
 
-- 📧 Email: info@visiontact.com
-- 📞 Phone: +(1) 281-786-0706
-- 🏢 Houston Office: 8990 Kirby Dr, Ste 220, Houston, TX 77054, USA
-- 🌍 Dubai Office: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE
+---
+
+## 🔐 Security Considerations
+
+### Production Recommendations
+
+- JWT-based authentication and authorization
+- Encrypted storage for sensitive candidate data
+- HTTPS for all communications
+- CORS policy enforcement and rate limiting
+- XSS and CSRF protection with regular security audits
+
+---
+
+## 🔮 Future Enhancements
+
+### Phase 1 — Core Improvements
+- Dark/Light theme toggle
+- Advanced search and filtering
+- Export data to CSV/JSON
+- Batch candidate operations
+
+### Phase 2 — Advanced Features
+- Real-time collaboration (WebSocket)
+- Calendar integration (Google/Outlook)
+- Email automation and SMS notifications
+
+### Phase 3 — Scale & Performance
+- Server-side rendering (Next.js)
+- Progressive Web App (PWA)
+- Offline mode and advanced caching
+
+### Phase 4 — AI & Analytics
+- Advanced AI scoring models
+- Predictive analytics dashboard
+- Sentiment analysis on videos
+- Bias detection and reporting
+
+---
+
+## 🎯 Technical Interview Topics Covered
+
+### Frontend Architecture
+- Feature-based vs page-based structure
+- Component composition patterns
+- State management strategies
+- Performance optimization techniques
+
+### React & TypeScript
+- Custom hooks development
+- Render optimization (useMemo, useCallback)
+- Type-safe component props and generic types
+
+### State Management
+- Zustand vs Redux comparison
+- Immutable state updates and derived state patterns
+- Persistence strategies
+
+### Animation & Accessibility
+- 60fps animations with transform/opacity
+- GPU acceleration and reflow prevention
+- Semantic HTML, ARIA labels, keyboard navigation
 
 ---
 
@@ -971,72 +535,53 @@ npm run test:watch
 - 🐙 [GitHub](https://github.com/malik-shaheer03)
 - 📸 [Instagram](https://instagram.com/malik_shaheer03)
 - 📧 [Email](mailto:shaheermalik03@gmail.com)
-- 🌐 [Portfolio](https://shaheermalik.dev)
+- 🌐 [Portfolio](https://shaheer-portfolio-omega.vercel.app/)
 
 ---
 
-## 📜 License
+## 📞 Contact
 
-This project is created for educational and demonstration purposes as part of a practical task for Vision Tact LLC.
+**Vision Tact LLC**
 
-**Note:** This is a frontend-only demo with no backend integration. All data is simulated and stored locally in the browser.
-
----
-
-## 🙏 Acknowledgments
-
-### Technologies & Tools
-- React team for the amazing framework
-- Zustand for lightweight state management
-- Framer Motion for smooth animations
-- Vite for blazing-fast development experience
-- TypeScript for type safety
-
-### Design Inspiration
-- Modern SaaS application interfaces
-- Professional recruitment platforms (Greenhouse, Lever, Workable)
-- AI-powered productivity tools (Notion, Linear, Height)
-
-### Special Thanks
-- **Vision Tact LLC** for the opportunity and comprehensive requirements
-- Open-source community for amazing libraries and tools
-- Design community for UI/UX inspiration
+- 📧 info@visiontact.com
+- 📞 +(1) 281-786-0706
+- 🏢 Houston: 8990 Kirby Dr, Ste 220, Houston, TX 77054, USA
+- 🌍 Dubai: Building A1, Dubai Digital Park, Dubai Silicon Oasis, UAE
 
 ---
 
 ## 📚 Documentation
 
-- 📖 [Requirements](docs/requirements.md) - Original task requirements
-- 📝 [Project Documentation](docs/PROJECT_DOCUMENTATION.md) - Complete feature documentation
-- 🏗️ [Architecture Decision](docs/ARCHITECTURE_DECISION.md) - Why feature-based structure
+- 📖 [Requirements](docs/requirements.md) — Original task requirements
+- 📝 [Project Documentation](docs/PROJECT_DOCUMENTATION.md) — Complete feature documentation
+- 🏗️ [Architecture Decision](docs/ARCHITECTURE_DECISION.md) — Why feature-based structure
 
 ---
 
-## 🎉 Project Highlights
+## 📜 License
 
-### What Makes TalentSage Special
+This project was created for educational and demonstration purposes as part of a practical task for Vision Tact LLC. All data is simulated and stored locally in the browser.
 
-1. **🎨 Premium Design** - Not a template, custom-designed with modern aesthetics
-2. **⚡ Blazing Fast** - Vite + optimized React = instant feedback
-3. **🤖 Real AI Features** - Working speech recognition with smart corrections
-4. **📱 Mobile-First** - Touch-optimized, responsive down to 320px
-5. **♿ Accessible** - WCAG compliant, keyboard navigable, screen reader friendly
-6. **🧪 Well-Tested** - Unit tests, integration tests, accessibility tests
-7. **📦 Production-Ready** - Clean architecture, TypeScript, error handling
-8. **📖 Well-Documented** - Clear README, inline comments, architecture docs
+---
+
+## 🙏 Acknowledgments
+
+- React team for the amazing framework
+- Zustand for lightweight state management
+- Framer Motion for smooth animations
+- Vite for blazing-fast development experience
+- Design inspiration from Greenhouse, Lever, Notion, and Linear
 
 ---
 
 **⭐ If you found this project impressive, please give it a star!**
 
-*Built with passion and attention to detail - demonstrating production-grade frontend engineering* 💪
+*Built with passion and attention to detail — demonstrating production-grade frontend engineering* 💪
 
 ---
 
 <div align="center">
 
 **Made with ❤️ using React, TypeScript, and modern web technologies**
-
-[🌐 Live Demo](https://talentsage-demo.vercel.app) | [📧 Contact](mailto:shaheermalik03@gmail.com) | [💼 Portfolio](https://shaheermalik.dev)
 
 </div>
