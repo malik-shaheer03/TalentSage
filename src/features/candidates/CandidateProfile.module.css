@@ -1,0 +1,299 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  padding-top: calc(80px + var(--space-8)); /* Header height + spacing */
+}
+
+.errorBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-4);
+  background: var(--color-danger-light);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+
+.errorContent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.errorIcon {
+  font-size: 1.5rem;
+}
+
+.errorTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-danger);
+  margin-bottom: var(--space-1);
+}
+
+.errorMessage {
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+}
+
+.errorClose {
+  font-size: 1.5rem;
+  color: var(--color-danger);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.backButton {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+}
+
+.backButton:hover {
+  color: var(--color-text);
+}
+
+.profileCard {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.profileHeader {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: white;
+  flex-shrink: 0;
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.email {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+}
+
+.scoreValue {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: var(--space-1);
+}
+
+.stageActions {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-8);
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-weight: var(--weight-medium);
+}
+
+.resumeText {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.evaluation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.evalSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.evalHeading {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.evalList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.evalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.evalBullet {
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+.recommendation {
+  padding: var(--space-4);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.recommendation strong {
+  color: var(--color-primary);
+}
+
+.jobInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.jobTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.jobMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileHeader {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .stageActions {
+    flex-direction: column;
+  }
+
+  .skills {
+    gap: var(--space-2);
+  }
+
+  .skill {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-3);
+  }
+}

@@ -1,0 +1,16 @@
+.marketingPage {
+  background: linear-gradient(
+    to bottom,
+    var(--color-background) 0%,
+    var(--color-surface) 100%
+  );
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Performance optimization: GPU acceleration */
+.marketingPage * {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

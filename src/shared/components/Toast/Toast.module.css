@@ -1,0 +1,94 @@
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  min-width: 320px;
+  max-width: 500px;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.toast::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: currentColor;
+}
+
+/* Toast Types */
+.success {
+  color: #10b981;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.error {
+  color: #ef4444;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.warning {
+  color: #f59e0b;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.info {
+  color: #3b82f6;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Icon */
+.iconWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+/* Message */
+.message {
+  flex: 1;
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Close Button */
+.closeButton {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.closeButton:active {
+  transform: scale(0.95);
+}
