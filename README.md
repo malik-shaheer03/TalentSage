@@ -8,9 +8,6 @@
 ![Zustand](https://img.shields.io/badge/Zustand-4.4.7-000000?style=for-the-badge&logo=redux&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.16.16-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-success?style=for-the-badge)](https://talentsage-demo.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/malik-shaheer03/TalentSage)
-
 </div>
 
 A **premium, AI-native recruitment operating system** built with **React**, **TypeScript**, and **modern web technologies**. TalentSage combines intelligent automation, voice AI assistance, and trust-critical UX patterns to revolutionize the hiring process.
