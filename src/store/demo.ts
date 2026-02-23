@@ -5,7 +5,7 @@
  * Run this in Node.js or browser console to see the store in action.
  */
 
-import { useStore, initializeStore } from './store';
+import { useStore, initializeStore } from './index';
 
 console.log('=== TalentSage Store Demo ===\n');
 
@@ -37,7 +37,7 @@ console.log(`New stage: ${updatedCandidate?.stage}`);
 
 // Check audit log
 const candidateLogs = store.getLogsByEntity('candidate', candidateId);
-const stageChangeLog = candidateLogs.find(log => log.action === 'stage_changed');
+const stageChangeLog = candidateLogs.find((log: any) => log.action === 'stage_changed');
 console.log('Audit log created:', stageChangeLog?.action);
 console.log('From:', stageChangeLog?.details.from, '→ To:', stageChangeLog?.details.to);
 console.log('');
@@ -47,13 +47,13 @@ console.log('=== Demo 2: Multiple Transitions ===');
 console.log('Shortlisting top candidates for job-1...');
 
 const job1Candidates = store.getCandidatesByJob('job-1')
-  .filter(c => c.stage === 'applied')
-  .sort((a, b) => (b.score || 0) - (a.score || 0))
+  .filter((c: any) => c.stage === 'applied')
+  .sort((a: any, b: any) => (b.score || 0) - (a.score || 0))
   .slice(0, 2);
 
 console.log(`Found ${job1Candidates.length} applied candidates with high scores`);
 
-job1Candidates.forEach(c => {
+job1Candidates.forEach((c: any) => {
   console.log(`- Shortlisting ${c.name} (score: ${c.score})`);
   store.changeCandidateStage(c.id, 'shortlisted', 'ai_assistant');
 });
@@ -79,16 +79,16 @@ console.log('Creating rubric with invalid weights (30 + 30 + 30 = 90)...');
 store.setRubric(testRubric);
 
 const savedRubric = store.getRubric('test-rubric');
-const totalWeight = savedRubric?.criteria.reduce((sum, c) => sum + c.weight, 0);
+const totalWeight = savedRubric?.criteria.reduce((sum: number, c: any) => sum + c.weight, 0);
 console.log('Weights normalized to:', totalWeight?.toFixed(2));
-console.log('Individual weights:', savedRubric?.criteria.map(c => c.weight.toFixed(2)));
+console.log('Individual weights:', savedRubric?.criteria.map((c: any) => c.weight.toFixed(2)));
 console.log('');
 
 // Demo 5: View all audit logs
 console.log('=== Demo 4: Audit Log Summary ===');
 console.log('Total audit logs:', store.auditLogs.length);
 
-const logsByAction = store.auditLogs.reduce((acc, log) => {
+const logsByAction = store.auditLogs.reduce((acc: any, log: any) => {
   acc[log.action] = (acc[log.action] || 0) + 1;
   return acc;
 }, {} as Record<string, number>);

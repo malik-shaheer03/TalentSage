@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand';
-import { AuditLog } from '../types';
+import { AuditLog } from '../../types';
 
 export interface AuditSlice {
   auditLogs: AuditLog[];

@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand';
-import { Rubric, RubricCriterion } from '../types';
+import { Rubric, RubricCriterion } from '../../types';
 import { AuditSlice } from './auditSlice';
 import { validateRubricWeights, normalizeRubricWeights } from '../utils/rubricValidation';
 
@@ -12,6 +12,7 @@ export interface RubricsSlice {
   getRubricByJob: (jobId: string) => Rubric | undefined;
 }
 
+// Helper function for generating rubric IDs
 const generateRubricId = () => `rubric-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
 export const createRubricsSlice: StateCreator<

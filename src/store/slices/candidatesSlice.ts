@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand';
-import { Candidate } from '../types';
+import { Candidate } from '../../types';
 import { AuditSlice } from './auditSlice';
 
 export interface CandidatesSlice {

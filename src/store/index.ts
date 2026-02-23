@@ -34,7 +34,6 @@ export const initializeStore = () => {
 
   // Load rubrics from localStorage first, fallback to seed data
   const storedRubrics = loadRubricsFromStorage();
-  const rubricsToLoad = Object.keys(storedRubrics).length > 0 ? storedRubrics : seedRubrics;
 
   if (Object.keys(storedRubrics).length > 0) {
     // Hydrate from localStorage
