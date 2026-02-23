@@ -171,8 +171,7 @@ export const AssistantWidget: React.FC = () => {
           date: date.toISOString(),
           time,
           notes
-        },
-        timestamp: Date.now()
+        }
       });
 
       const response = `Interview scheduled for ${date.toLocaleDateString()} at ${time}. I've added it to the timeline.`;

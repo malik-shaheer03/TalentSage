@@ -12,9 +12,6 @@ export interface RubricsSlice {
   getRubricByJob: (jobId: string) => Rubric | undefined;
 }
 
-// Helper function for generating rubric IDs
-const generateRubricId = () => `rubric-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-
 export const createRubricsSlice: StateCreator<
   RubricsSlice & AuditSlice,
   [],
